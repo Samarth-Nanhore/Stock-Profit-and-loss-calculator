@@ -3,10 +3,10 @@ var stocksQuantity = document.querySelector("#stocks-quantity");
 var currentPrice = document.querySelector("#current-price");
 var submit = document.querySelector("#submit");
 var output = document.querySelector("#output");
-var page = document.querySelector("#fullpage");
 
-//botton function 
-submit.addEventListener('click', checkInput);
+
+//button  function 
+submit.addEventListener('click', checkInput); //event trigger
 
 function checkInput() {
     if ((intialPrice.value == '') || (stocksQuantity.value == '') || (currentPrice.value == '')) {
@@ -17,7 +17,7 @@ function checkInput() {
     }
 }
 
-
+//convert string to number
 function submitHandler() {
     var ip = Number(intialPrice.value);
     var qty = Number(stocksQuantity.value);
@@ -25,6 +25,7 @@ function submitHandler() {
     check(ip, qty, curr)
 }
 
+//check for validation
 function check(ip, qty, curr){
     if(ip > 0 && qty > 0 && curr >0){
         calculation(ip, qty, curr)
@@ -47,13 +48,13 @@ function calculation(i,q,c)
         var loss = (i - c)* q;
         var lossPercentage =(loss/i)*100;
         output.style.color = 'red';
-        output.innerHTML = `You are in Loss! The loss is ${loss} and loss percentage ${lossPercentage} 😿`;
+        output.innerHTML = `You are in Loss! The loss is ${loss} and loss percentage ${lossPercentage} 😕`;
     
     }else if( c>i) {
           var profit = (c - i)*q;
           var profitPercentage = (profit/i)*100;
           output.style.color = 'green';
-        output.innerText = `You are in Profit! The Profit is ${profit} and profit percentage is ${profitPercentage}. 🎉`;
+        output.innerText = `You are in Profit! The Profit is ${profit} and profit percentage is ${profitPercentage}%.🎉`;
     }
     else{
         output.innerHTML ="it's all about risk 🚀";
