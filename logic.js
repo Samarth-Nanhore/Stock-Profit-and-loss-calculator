@@ -48,7 +48,7 @@ function calculation(i,q,c)
         var loss = (i - c)* q;
         var lossPercentage =(loss/i)*100;
         output.style.color = 'red';
-        output.innerHTML = `You are in Loss! The loss is ${loss} and loss percentage ${lossPercentage} 😕`;
+        output.innerHTML = `You are in Loss! The loss is ${loss} and loss percentage ${lossPercentage}%. 😕`;
     
     }else if( c>i) {
           var profit = (c - i)*q;
